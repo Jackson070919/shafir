@@ -1,0 +1,28 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+.card {
+    border: none;
+}
+
+.header-bg {
+    background: url('image/background1.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer {
+    background: #222;
+    color: #bbb;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - Shafir Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style type="text/css">
+        .card {
+    border: none;
+}
+
+.bg-primary {
+    background: url('image/Windows 11.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shafir Developer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pos.html">POS Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="subscription.html">Software</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Subscribe to Your Favorite Software</h1>
+            <p class="lead">Affordable subscriptions for Windows and Linux software.</p>
+        </div>
+    </header>
+
+    <!-- Software List -->
+    <section id="software-list" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Available Software</h2>
+            <div class="row g-4">
+                <!-- Software Item -->
+                <div class="col-md-4">
+                    <div class="card shadow h-100">
+                        <img src="image/windows 7.jpg" class="card-img-top" alt="Windows 7">
+                        <div class="card-body">
+                            <h5 class="card-title">Windows 7</h5>
+                            <p>Reliable software for legacy systems.</p>
+                            <h4>$50</h4>
+                            <button class="btn btn-primary select-software" data-software="Windows 7" data-price="50">Select</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for other software items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Form -->
+    <section id="subscribe" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Subscribe Now</h2>
+            <form id="subscription-form" action="success.html" method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" placeholder="Your Email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <input type="text" class="form-control" placeholder="Selected Software" id="selected-software" name="software" readonly>
+                </div>
+                <div class="my-3">
+                    <input type="text" class="form-control" placeholder="Total Price" id="total-price" name="price" readonly>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <p>&copy; 2024 Shafir Developer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for handling software selection
+        document.addEventListener("DOMContentLoaded", () => {
+            const softwareButtons = document.querySelectorAll(".select-software");
+            const selectedSoftwareInput = document.getElementById("selected-software");
+            const totalPriceInput = document.getElementById("total-price");
+
+            softwareButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const software = button.getAttribute("data-software");
+                    const price = button.getAttribute("data-price");
+                    selectedSoftwareInput.value = software;
+                    totalPriceInput.value = `$${price}`;
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
